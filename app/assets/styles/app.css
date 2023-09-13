@@ -23,5 +23,10 @@ li {
   align-items: center;
   justify-content: space-between;
   gap: 2em;
-  background-color: #f5f6fc;
+  background-color: #e5e7f0;
+}
+
+button {
+  background-color: rgb(171, 182, 182);
+  border-radius: 20px;
 }
