@@ -27,7 +27,12 @@
 {% endif %}
 
 <!-- form for adding new item -->
+
 <form action="/item/create" method="post">
+  <input
+    type="hidden"
+    name="recipient"
+    value="recipient-email-address@example.com">
   <input type="text" name="title">
   <button type="submit">Add item</button>
 </form>
