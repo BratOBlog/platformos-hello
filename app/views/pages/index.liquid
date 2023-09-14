@@ -8,12 +8,14 @@
   {% for item in items.records.results %}
     <li>
       {{ item.title }}
+      {{ item.content }}
+      <div class="priority">{{ item.priority }}</div>
       <form action="/item/delete" method="post">
         <input
           type="hidden"
           name="id"
           value="{{ item.id }}">
-        <button type="submit">Mark as done</button>
+        <button type="submit">Delete task</button>
       </form>
     </li>
   {% endfor %}
@@ -29,11 +31,39 @@
 <!-- form for adding new item -->
 
 <form action="/item/create" method="post">
+  <!-- Add a text input field for the 'title' -->
+  <label for="title">Title:</label>
+  <input
+  type="text"
+    id="title"
+    name="title"
+    required>
+
+  <!-- Add a text input field for 'content' -->
+  <label for="content">Content:</label>
+  <input
+  type="text"
+    id="content"
+    name="content"
+    required>
+
+  <!-- Add a select input for 'priority' -->
+  <label for="priority">Priority:</label>
+  <select
+    id="priority"
+    name="priority"
+    required>
+    <option value="Low">Low</option>
+    <option value="Medium">Medium</option>
+    <option value="High">High</option>
+  </select>
+
+  <!-- Add a recipient email field if needed -->
   <input
     type="hidden"
     name="recipient"
     value="recipient-email-address@example.com">
-  <input type="text" name="title">
+
   <button type="submit">Add item</button>
 </form>
 

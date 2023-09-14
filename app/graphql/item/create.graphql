@@ -1,15 +1,21 @@
 mutation item_create(
   $title: String
+  $content: String
+  $priority: String
 ) {
   record: record_create(
     record: {
       table: "item"
       properties: [
         { name: "title", value: $title }
+        {name: "content", value: $content}
+        {name: "priority", value: $priority}
       ]
     }
   ) {
     id
-    title: property(name: "title")
+    title: property(name: "title"),
+    content: property(name: "content"),
+    priority: property(name: "priority")
   }
 }

@@ -2,3 +2,7 @@ name: item
 properties:
   - name: title
     type: string
+  - name: content
+    type: string
+  - name: priority
+    type: string
