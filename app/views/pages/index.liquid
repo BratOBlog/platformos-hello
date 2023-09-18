@@ -6,10 +6,22 @@
 <!-- list of items -->
 <ul>
   {% for item in items.records.results %}
-    <li>
-      {{ item.title }}
-      {{ item.content }}
-      <div class="priority">{{ item.priority }}</div>
+    <li class="{{item.priority}}">
+      <div>{{ item.title }}</div>
+      <div>{{ item.content }}</div>
+      <div>
+        {% case item.priority %}
+          {% when "1" %}
+          low
+          {% when "2" %}
+          medium
+        {% else %}
+          high
+        {% endcase %}
+      </div>
+
+
+
       <form action="/item/delete" method="post">
         <input
           type="hidden"
@@ -20,7 +32,6 @@
     </li>
   {% endfor %}
 </ul>
-
 
 
 <!-- information shown when the list is empty -->
@@ -53,9 +64,9 @@
     id="priority"
     name="priority"
     required>
-    <option value="Low">Low</option>
-    <option value="Medium">Medium</option>
-    <option value="High">High</option>
+    <option class="prioLow" value="1">Low</option>
+    <option class="prioMed" value="2">Medium</option>
+    <option class="prioHigh" value="3">High</option>
   </select>
 
   <!-- Add a recipient email field if needed -->
@@ -64,7 +75,7 @@
     name="recipient"
     value="recipient-email-address@example.com">
 
-  <button type="submit">Add item</button>
+  <button type="submit">Add task</button>
 </form>
 
 <!-- link to the About Me page -->

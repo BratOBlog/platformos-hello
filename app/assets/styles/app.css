@@ -38,3 +38,18 @@ button {
   justify-content: space-evenly;
   gap: 2rem;
 }
+
+.prioLow{
+  font-weight: bold;
+  background-color: green;
+}
+
+.prioMed{
+  font-weight: bold;
+  background-color: yellow;
+}
+
+.prioHigh{
+  font-weight: bold;
+  background-color: red;
+}

@@ -1,10 +1,10 @@
 ---
 method: post
 ---
-
+{% assign priority_help = context.params.priority | plus: 0 | default: 1 %}
 
 {% liquid
-	graphql result = 'item/create', title: context.params.title, content:context.params.content, priority: context.params.priority 
+	graphql result = 'item/create', title: context.params.title, content: context.params.content, priority: priority_help 
 
 	if result.record.id
 		graphql email = 'item/email/created', data: context.params

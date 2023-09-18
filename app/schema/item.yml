@@ -5,4 +5,4 @@ properties:
   - name: content
     type: string
   - name: priority
-    type: string
+    type: integer

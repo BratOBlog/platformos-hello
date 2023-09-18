@@ -1,7 +1,7 @@
 mutation item_create(
   $title: String
   $content: String
-  $priority: String
+  $priority: Int
 ) {
   record: record_create(
     record: {
@@ -9,7 +9,7 @@ mutation item_create(
       properties: [
         { name: "title", value: $title }
         {name: "content", value: $content}
-        {name: "priority", value: $priority}
+        {name: "priority", value_int: $priority}
       ]
     }
   ) {
