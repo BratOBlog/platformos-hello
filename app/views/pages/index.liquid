@@ -5,30 +5,33 @@
 <h1 class="text-5xl">This is my to do list</h1>
 
 <!-- list of items -->
-<ul class="bg-blue-300">
+<ul class="bg-blue-300  p-2 m-2 ">
   {% for item in items.records.results %}
-    <li class="{{item.priority}} w-300px px-0.8 py-1 flex items-center justif-around">
-      <div class="text-gray-700">{{ item.title }}</div>
-      <div class="text-red-500">{{ item.content }}</div>
-      <div>
+    <li class="card w-300px m-2 p-2 flex content-center justify-between gap-5 bg-white shadow-md rounded-lg overflow-hidden group hover:scale-105">
+      <div class="font-semibold text-l">Task tilte: </br> {{ item.title }}</div>
+      <div class="">Task description: </br> {{ item.content }}</div>
+      <div
+        class="
         {% case item.priority %}
-          {% when "1" %}
-          Low
-          {% when "2" %}
-          Medium
+          {% when "1" %} text-green-500 font-bold
+          {% when "2" %} text-yellow-500 font-bold
+        {% else %}
+          text-red-500 font-bold
+        {% endcase %}">
+        {% case item.priority %}
+          {% when '1' %} Low
+          {% when '2' %} Medium
         {% else %}
           High
         {% endcase %}
       </div>
-
-
 
       <form action="/item/delete" method="post">
         <input
           type="hidden"
           name="id"
           value="{{ item.id }}">
-        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded" type="submit">Delete task</button>
+        <button class="cursor-pointer bg-blue-500 text-white font-bold py-2 px-4 rounded" type="submit">Delete task</button>
       </form>
     </li>
   {% endfor %}
@@ -46,19 +49,21 @@
   <!-- Add a text input field for the 'title' -->
   <label for="title">Title:</label>
   <input
-  class="border-black"
+  class="border border-black rounded-lg p-2"
     type="text"
     id="title"
     name="title"
+    placeholder="Enter task title"
     required>
 
   <!-- Add a text input field for 'content' -->
   <label for="content">Content:</label>
   <input
-  class="border-black"
+  class="border border-black rounded-lg p-2"
     type="text"
     id="content"
     name="content"
+    placeholder="Enter task description"
     required>
 
   <!-- Add a select input for 'priority' -->
@@ -67,9 +72,9 @@
     id="priority"
     name="priority"
     required>
-    <option class="prioLow" value="1">Low</option>
-    <option class="prioMed" value="2">Medium</option>
-    <option class="prioHigh" value="3">High</option>
+    <option class="bg-green-500" value="1">Low</option>
+    <option class="bg-yellow-500" value="2">Medium</option>
+    <option class="bg-red-600" value="3">High</option>
   </select>
 
   <!-- Add a recipient email field if needed -->
@@ -78,8 +83,8 @@
     name="recipient"
     value="recipient-email-address@example.com">
 
-  <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded" type="submit">Add task</button>
+  <button class="cursor-pointer bg-blue-500 text-white font-bold py-2 px-4 rounded" type="submit">Add task</button>
 </form>
 
 <!-- link to the About Me page -->
-<a href="/about">About Me</a>
+<a class="text-blue-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 hover:text-blue-400 " href="/about">About Me</a>
