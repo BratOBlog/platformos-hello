@@ -2,21 +2,22 @@
   graphql items = 'item/search'
 %}
 
-<h1>This is my to do list</h1>
+<h1 class="text-5xl">This is my to do list</h1>
+
 <!-- list of items -->
-<ul>
+<ul class="bg-blue-300">
   {% for item in items.records.results %}
-    <li class="{{item.priority}}">
-      <div>{{ item.title }}</div>
-      <div>{{ item.content }}</div>
+    <li class="{{item.priority}} w-300px px-0.8 py-1 flex items-center justif-around">
+      <div class="text-gray-700">{{ item.title }}</div>
+      <div class="text-red-500">{{ item.content }}</div>
       <div>
         {% case item.priority %}
           {% when "1" %}
-          low
+          Low
           {% when "2" %}
-          medium
+          Medium
         {% else %}
-          high
+          High
         {% endcase %}
       </div>
 
@@ -27,7 +28,7 @@
           type="hidden"
           name="id"
           value="{{ item.id }}">
-        <button type="submit">Delete task</button>
+        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded" type="submit">Delete task</button>
       </form>
     </li>
   {% endfor %}
@@ -45,7 +46,8 @@
   <!-- Add a text input field for the 'title' -->
   <label for="title">Title:</label>
   <input
-  type="text"
+  class="border-black"
+    type="text"
     id="title"
     name="title"
     required>
@@ -53,7 +55,8 @@
   <!-- Add a text input field for 'content' -->
   <label for="content">Content:</label>
   <input
-  type="text"
+  class="border-black"
+    type="text"
     id="content"
     name="content"
     required>
@@ -75,7 +78,7 @@
     name="recipient"
     value="recipient-email-address@example.com">
 
-  <button type="submit">Add task</button>
+  <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded" type="submit">Add task</button>
 </form>
 
 <!-- link to the About Me page -->
