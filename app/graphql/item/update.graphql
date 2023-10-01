@@ -1,0 +1,12 @@
+mutation update($id: ID!, $completed: Boolean!) {
+  record_update(
+    id: $id
+    record: {
+      properties: [
+        { name: "completed", value_boolean: $completed }
+      ]
+    }
+  ) {
+    id
+  }
+}

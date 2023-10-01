@@ -6,3 +6,5 @@ properties:
     type: string
   - name: priority
     type: integer
+  - name: completed
+    type: boolean

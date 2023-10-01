@@ -1,0 +1,21 @@
+---
+method: post
+---
+{%- assign id = context.params.slug3 -%}
+
+{% if context.params.completed %}
+  {%- assign completed = context.params.completed | matches: '1' -%}
+  {% graphql result = 'item/update', id: id, completed: completed %}
+{% endif %}
+
+{% assign item = result | fetch: "record_update" %}
+
+{% if item.id %}
+  <script>
+    window.location.href = 'item/search       {{ context.params.item_id }}';
+  </script>
+{% else %}
+  Something went wrong :(
+  <br>
+  {{ result.errors }}
+{% endif %}

@@ -8,6 +8,25 @@
 <ul class="bg-blue-300  p-2 m-2 ">
   {% for item in items.records.results %}
     <li class="card w-300px m-2 p-2 flex content-center justify-between gap-5 bg-white shadow-md rounded-lg overflow-hidden group hover:scale-105">
+      <form
+        action="/item/update/{{ item.id }}"
+        method="POST"
+        class="text-center">
+        
+    
+        <input type="hidden" name="completed" value="0">
+        <input
+              type="checkbox"
+              name="completed"
+              value="1"
+              onchange="this.form.submit()"
+              class="w-8 h-8"
+              {% if item.update == true %}checked{% endif %}
+            />
+        <input type="hidden" name="list_id" value="{{ list.id }}">
+      </form>
+
+
       <div class="font-semibold text-l">Task tilte: </br> {{ item.title }}</div>
       <div class="">Task description: </br> {{ item.content }}</div>
       <div
