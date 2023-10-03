@@ -1,0 +1,15 @@
+---
+method: post
+---
+
+{% assign item_completed = true %}
+
+{% liquid 
+   graphql result = 'item/completed', id: id, completed: item_completed
+
+  if result.record.completed
+    redirect_to '/'
+    else
+      echo 'Something went wrong'
+      echo result.errors
+  endif %}
