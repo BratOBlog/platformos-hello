@@ -4,6 +4,6 @@ mutation update($id: ID!, $completed: Boolean!) {
     record: {properties: [{name: "completed", value_boolean: $completed}]}
   ) {
     id
-    property(name: "completed")
+    property_boolean(name: "completed")
   }
 }
