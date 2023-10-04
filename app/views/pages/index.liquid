@@ -10,12 +10,10 @@
   {% for item in items.records.results %}
     <li class="card w-300px m-2 p-2 flex content-center justify-between gap-5 bg-white shadow-md rounded-lg overflow-hidden group hover:scale-105">
       <form
-        action="{{ item.completed }}"
-        method="POST"
+        action="/item/completed"
+        method="post"
         class="text-center">
-        
-    
-        <input type="hidden" name="completed" value="0">
+        <label for="completed">Completed</label>
         <input
               type="checkbox"
               name="completed"
@@ -24,7 +22,7 @@
               class="w-8 h-8"
               {% if item.completed == true %}checked{% endif %}
             />
-        <input type="hidden" name="item.id" value="{{ item.id }}">
+        <input type="hidden" name="id" value="{{ item.id }}">
       </form>
 
 
