@@ -9,7 +9,7 @@ query item_search {
       title: property(name: "title")
       content: property(name: "content")
       priority: property(name: "priority")
-      completed: property(name: "completed")
+      completed: property_boolean(name: "completed")
     }
     total_entries
   }
