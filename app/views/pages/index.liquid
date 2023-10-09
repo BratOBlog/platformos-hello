@@ -1,9 +1,22 @@
+{% liquid
+
+  if context.current_user.id
+    function user = 'queries/user/load', id: context.current_user.id
+    
+endif %}
+
+
+{% if context.current_user.id %}
+
 
 {% liquid
   graphql items = 'item/search'
 %}
 
-<h1 class="text-5xl">This is my to do list</h1>
+  
+<div>
+  <h1 class="text-5xl m-3">Welcome {% if user %} {{ user.name }} {% endif %} to Taskmaster 3000!<h1>
+</div>
 
 <!-- list of items -->
 <ul class="bg-blue-300  p-2 m-2 ">
@@ -106,3 +119,5 @@
 
 <!-- link to the About Me page -->
 <a class="text-blue-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 hover:text-blue-400 " href="/about">About Me</a>
+
+{% endif %}
