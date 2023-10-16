@@ -5,11 +5,11 @@ method: post
 {% assign item_completed = context.params.completed | matches: "1" %}
 
 {% liquid
-
-  if context.params.completed
+    if context.params.completed
     graphql result = 'item/completed', id: context.params.id, completed: item_completed
 
     redirect_to '/'
+
 
   else
       echo 'Something went wrong'

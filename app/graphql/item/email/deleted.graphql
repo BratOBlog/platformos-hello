@@ -1,0 +1,11 @@
+mutation email_item_deleted(
+  $data: HashObject!
+) {
+  email_send(
+    template: { name: "item/deleted" }
+    data: $data
+  ) {
+    is_scheduled_to_send
+    errors { message }
+  }
+}
