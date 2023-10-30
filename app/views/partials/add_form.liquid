@@ -1,0 +1,40 @@
+ <form action="/item/create" method="post">
+        <!-- Add a text input field for the 'title' -->
+        <label for="title">Title:</label>
+        <input
+        class="border border-black rounded-lg p-2"
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Enter task title"
+          required>
+      
+        <!-- Add a text input field for 'content' -->
+        <label for="content">Content:</label>
+        <input
+        class="border border-black rounded-lg p-2"
+          type="text"
+          id="content"
+          name="content"
+          placeholder="Enter task description"
+          required>
+      
+        <!-- Add a select input for 'priority' -->
+        <label for="priority">Priority:</label>
+        <select
+          id="priority"
+          name="priority"
+          required>
+          <option class="bg-green-500" value="1">Low</option>
+          <option class="bg-yellow-500" value="2">Medium</option>
+          <option class="bg-red-600" value="3">High</option>
+        </select>
+      
+        <!-- Add a recipient email field if needed -->
+        <input
+          type="hidden"
+          name="recipient"
+          value="recipient-email-address@example.com">
+      
+        <button class="blue_button" type="submit"> + Add task</button>
+      </form>

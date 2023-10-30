@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-  <html>
+  <html lang="en">
     <head>
       <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>TaskMaster3000</title>
       <link rel="stylesheet" href="{{ 'styles/output.css' | asset_url }}">
     </head>
     <body>
       <div>
         {% if context.current_user.id %}
-          <a class="cursor-pointer bg-blue-500 text-white font-bold py-2 px-4 rounded" href="/logout">Log out</a>
+          <a class="blue_button" href="/logout">Log out</a>
         {% else %}
         <h1 class="text-5xl mb-10"> Taskmaster 3000</h1>
         <p class="text-lg mb-10 font-bold"> To view the to do list or enter a task please log in or register. </p>
-        <a class="cursor-pointer bg-blue-500 text-white font-bold py-2 px-4 rounded" href="/login">Log in</a> or <a class="cursor-pointer bg-blue-500 text-white font-bold py-2 px-4 rounded"href="/register">register</a>
+        <a class="blue_button" href="/login">Log in</a> or <a class="blue_button"href="/register">Register</a>
       {% endif %}
       </div>
       {{ content_for_layout }}

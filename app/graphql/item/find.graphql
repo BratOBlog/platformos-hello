@@ -1,0 +1,17 @@
+query item_find ($id: ID!) {
+  records: records(
+    per_page: 1
+    filter: {table: { value: "item" }
+    id: { value: $id }}
+  ) {
+    results {
+      id
+      title: property(name: "title")
+      content: property(name: "content")
+      priority: property(name: "priority")
+      completed: property_boolean(name: "completed")
+    }
+    total_entries
+  }
+}
+

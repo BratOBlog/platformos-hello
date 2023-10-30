@@ -19,7 +19,7 @@ endif %}
 </div>
 
 <!-- list of items -->
-<ul class="bg-blue-300  p-2 m-2 ">
+<ul class="bg-yellow-600 p-2 m-2 ">
   {% for item in items.records.results %}
     <li class="card w-300px m-2 p-2 flex content-center justify-between gap-5 bg-white shadow-md rounded-lg overflow-hidden group hover:scale-105">
       <form
@@ -30,6 +30,7 @@ endif %}
         <input
               type="checkbox"
               name="completed"
+              id="completed"
               value="1"
               onchange="this.form.submit()"
               class="w-8 h-8"
@@ -57,66 +58,18 @@ endif %}
         {% endcase %}
       </div>
 
-      <!--Task delete--->
-      <form action="/item/delete" method="post">
-        <input
-          type="hidden"
-          name="id"
-          value="{{ item.id }}">
-        <button class="cursor-pointer bg-blue-500 text-white font-bold py-2 px-4 rounded" type="submit">Delete task</button>
-      </form>
+      {% include 'task_delete' %}
+   
     </li>
   {% endfor %}
 </ul>
 
+{% include 'empty_list' %}
 
-<!-- information shown when the list is empty -->
-{% if items.records.total_entries == 0 %}
-  <div>There are no items in the list.</div>
-{% endif %}
 
 <!-- form for adding new item -->
 
-<form action="/item/create" method="post">
-  <!-- Add a text input field for the 'title' -->
-  <label for="title">Title:</label>
-  <input
-  class="border border-black rounded-lg p-2"
-    type="text"
-    id="title"
-    name="title"
-    placeholder="Enter task title"
-    required>
-
-  <!-- Add a text input field for 'content' -->
-  <label for="content">Content:</label>
-  <input
-  class="border border-black rounded-lg p-2"
-    type="text"
-    id="content"
-    name="content"
-    placeholder="Enter task description"
-    required>
-
-  <!-- Add a select input for 'priority' -->
-  <label for="priority">Priority:</label>
-  <select
-    id="priority"
-    name="priority"
-    required>
-    <option class="bg-green-500" value="1">Low</option>
-    <option class="bg-yellow-500" value="2">Medium</option>
-    <option class="bg-red-600" value="3">High</option>
-  </select>
-
-  <!-- Add a recipient email field if needed -->
-  <input
-    type="hidden"
-    name="recipient"
-    value="recipient-email-address@example.com">
-
-  <button class="cursor-pointer bg-blue-500 text-white font-bold py-2 px-4 rounded" type="submit">Add task</button>
-</form>
+{%include 'add_form' %}
 
 <!-- link to the About Me page -->
 <a class="text-blue-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 hover:text-blue-400 " href="/about">About Me</a>

@@ -1,27 +1,4 @@
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: sans-serif;
-}
 
-.blue_button {
-  cursor: pointer;
-  background-color: rgb(59 130 246 1);
-  color: white;
-  font-weight: 700;
-  padding-top: 0.5rem/* 8px */;
-  padding-bottom: 0.5rem/* 8px */;
-  padding-left: 1rem/* 16px */;
-  padding-right: 1rem/* 16px */;
-  border-radius: 0.25rem/* 4px */;
-}
-
-.hover\:scale-105:hover {
-  transform: scale(1.05);
-}
 
 /*
 ! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com

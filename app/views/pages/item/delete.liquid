@@ -3,11 +3,13 @@ method: post
 ---
 
 {% liquid
+	graphql deleted_item = 'item/find', id: context.params.id
+
 	graphql result = 'item/delete', id: context.params.id
 	
 	
 	if result.record.id
-		graphql email = 'item/email/deleted', data: context.params
+		graphql email = 'item/email/deleted', data: deleted_item.records.results.first
 		redirect_to '/'
 	else
 		echo 'Something went wrong'
