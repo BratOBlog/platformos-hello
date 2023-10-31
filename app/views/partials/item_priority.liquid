@@ -1,0 +1,15 @@
+<div
+    class="
+    {% case item.priority %}
+      {% when "1" %} text-green-500 font-bold
+      {% when "2" %} text-yellow-500 font-bold
+    {% else %}
+      text-red-500 font-bold
+    {% endcase %}">
+    {% case item.priority %}
+      {% when '1' %} Low
+      {% when '2' %} Medium
+    {% else %}
+      High
+    {% endcase %}
+  </div>

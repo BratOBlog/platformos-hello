@@ -1,6 +1,6 @@
  <form action="/item/create" method="post">
         <!-- Add a text input field for the 'title' -->
-        <label for="title">Title:</label>
+        <label for="title" aria-label="Add a title for your task">Title:</label>
         <input
         class="border border-black rounded-lg p-2"
           type="text"
@@ -10,7 +10,7 @@
           required>
       
         <!-- Add a text input field for 'content' -->
-        <label for="content">Content:</label>
+        <label for="content" aria-label="Add a description for your task">Content:</label>
         <input
         class="border border-black rounded-lg p-2"
           type="text"
@@ -20,7 +20,7 @@
           required>
       
         <!-- Add a select input for 'priority' -->
-        <label for="priority">Priority:</label>
+        <label for="priority" aria-label="Select the priority of a task from the dropdown menu">Priority:</label>
         <select
           id="priority"
           name="priority"
@@ -36,5 +36,5 @@
           name="recipient"
           value="recipient-email-address@example.com">
       
-        <button class="blue_button" type="submit"> + Add task</button>
+        <button class="blue_button" aria-label="Click to add a new task" type="submit"> + Add task</button>
       </form>

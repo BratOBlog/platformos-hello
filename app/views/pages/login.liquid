@@ -9,11 +9,11 @@
   <form method="post" action="/user/login">
     <input type="hidden" name="authenticity_token" value="{{ context.authenticity_token }}">
     <fieldset class="pb-6">
-      <input type="email" name="email" class="p-2 border border-gray-500" placeholder="Email">
+      <input type="email" name="email"  aria-label="Provide your email address in the field"class="p-2 border border-gray-500" placeholder="Email">
     </fieldset>
     <fieldset class="pb-6">
-      <input type="password" name="password" class="p-2 border border-gray-500" placeholder="Password">
+      <input type="password" name="password"  aria-label="Provide your password in the field"class="p-2 border border-gray-500" placeholder="Password">
     </fieldset>
-    <button class="blue_button" type="submit">Log in</button>
+    <button class="blue_button" type="submit" aria-label="Click the button to log in">Log in</button>
   </form>
 </div>

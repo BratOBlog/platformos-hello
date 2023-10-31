@@ -9,13 +9,13 @@
     <form method="post" action="/user/create">
       <input type="hidden" name="authenticity_token" value="{{ context.authenticity_token }}">
       <fieldset class="pb-6">
-        <input type="email" name="email" class="p-2 border border-gray-500" placeholder="Email" required>
+        <input type="email" name="email" aria-label="Provide your email address in the field to registert to Taskmaster3000" class="p-2 border border-gray-500" placeholder="Email" required>
       </fieldset>
       <fieldset class="pb-6">
-        <input type="password" name="password" class="p-2 border border-gray-500" placeholder="Password" required>
+        <input type="password" name="password" aria-label="Provide your password in the field to registert to Taskmaster3000" class="p-2 border border-gray-500" placeholder="Password" required>
       </fieldset>
       <fieldset class="pb-6">
         <input type="text" name="name" class="p-2 border border-gray-500" placeholder="Name" required>
       </fieldset>
-      <button class="blue_button" type="submit">Register</button>
+      <button class="blue_button" aria-label="Click the register button to registert to Taskmaster3000" type="submit">Register</button>
     </form>
