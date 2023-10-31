@@ -11,11 +11,9 @@
         {% if context.current_user.id %}
           <div class="flex col justify-between items-center">
           <header>
-
             {% include 'header'%}
-          
           </header>
-
+          <p> {{ current_user.name }} </p>
           <a class="blue_button" aria-label="Click the log out button to leave Taskmaster3000" href="/logout">Log out</a>
         </div>
         {% else %}
@@ -24,6 +22,13 @@
         <a class="blue_button" aria-label="Click the login button to log in to Taskmaster3000" href="/login">Log in</a> or <a aria-label="If not a user already click the register button for Taskmaster3000" class="blue_button"href="/register">Register</a>
       {% endif %}
       </div>
+
       {{ content_for_layout }}
+
+      
+      <footer class="absolute bottom-0 left-0 w-full p-4">
+        {% render 'footer' %}
+        </footer>
+
     </body>
   </html>

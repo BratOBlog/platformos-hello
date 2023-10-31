@@ -583,6 +583,10 @@ video {
   align-content: center;
 }
 
+.items-center {
+  align-items: center;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -719,6 +723,16 @@ video {
 
 body{
   background-color: darkcyan;
+}
+
+main{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+  font-family: sans-serif;
 }
 
 .hover\:scale-105:hover {
